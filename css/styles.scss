@@ -1,0 +1,282 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+
+html {
+  background-color: #c9d1b3;
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+header {
+  max-height: 100vh;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 65%;
+  padding-bottom: 5rem;
+
+  h1 {
+    flex-grow: 5;
+    font-size: 20vw;
+    padding-left: 5vw;
+  }
+
+  h4 {
+    flex-grow: 2;
+    font-size: 10vw;
+    float: right;
+    text-align: right;
+    padding-right: 5vw;
+  }
+
+  h5 {
+    flex-grow: 1;
+    font-size: 6vw;
+    padding-left: 10vw;
+  }
+}
+
+.sec1 {
+  margin-left: -50vw;
+  width: 200%;
+  background-color: white;
+
+  h3 {
+    font-size: 7vw;
+    padding-left: 55vw;
+    padding-top: 3.5rem;
+    color: #c9d1b3;
+    width: 40%;
+    word-break: keep-all;
+  }
+
+  p {
+    font-size: 3vw;
+    padding-left: 59vw;
+    padding-top: 3.5rem;
+    color: #c9d1b3;
+    width: 40%;
+    word-break: keep-all;
+    padding-bottom: 5rem;
+  }
+}
+
+.sec2 {
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+  width: 100%;
+  max-height: 100vh;
+  margin-top: 5rem;
+  justify-content: space-evenly;
+  align-items: baseline;
+  flex-wrap: nowrap;
+
+  .right {
+    margin: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #c9d1b3;
+    flex-grow: 100;
+    flex-shrink: 100;
+    height: 20rem;
+
+    .right-copy {
+      opacity: 0;
+    }
+
+    h6 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    &:hover {
+      animation: coverScreen 0.7s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+
+      .right-copy {
+        animation: showRightCopy 0.7;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    /* HOVER OFF */
+    animation: padding 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .wrong {
+    margin: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #c9d1b3;
+    flex-grow: 100;
+    flex-shrink: 100;
+    height: 20rem;
+
+    .wrong-copy {
+      opacity: 0;
+    }
+
+    h6 {
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    &:hover {
+      animation: coverScreen 0.7s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+
+      .wrong-copy {
+        animation: showCopy 0.7;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    /* HOVER OFF */
+    animation: padding 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  h3 {
+    width: 5vw;
+    align-items: center;
+  }
+}
+
+.sec3 {
+  width: 140vw;
+  margin-left: -50vw;
+  max-height: 100vh;
+  background-color: #ffffff;
+  color: #c9d1b3;
+  border-radius: 0 125px 125px 0;
+
+  h2 {
+    padding-left: 53vw;
+    font-size: 15vw;
+    word-break: keep-all;
+  }
+}
+
+.sec4 {
+  color: #ffffff;
+
+  h3 {
+    font-size: 3vw;
+  }
+
+  p {
+    font-size: 2vw;
+  }
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+
+  .toBlog {
+
+    font-size: 10vw;
+    color: black;
+    text-decoration: none;
+  }
+
+  .clicked {
+
+    font-size: 4vw;
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.hover-copy {
+  color: #ffffff;
+  text-align: center;
+  font-size: 3rem;
+}
+
+//Animation for Hovering over right and wrong
+
+@keyframes coverScreen {
+  from {
+    width: 10rem;
+    height: 20rem;
+  }
+
+  to {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+@keyframes showCopy {
+  from {
+    opacity: 0;
+    font-size: 1vw;
+    padding: 0;
+  }
+
+  to {
+    opacity: 1;
+    font-size: 3vw;
+    padding: 0 2vw;
+  }
+}
+
+@keyframes showRightCopy {
+  from {
+    opacity: 0;
+    font-size: 1vw;
+    padding: 0;
+  }
+
+  to {
+    opacity: 1;
+    font-size: 2.5vw;
+    padding: 0 2vw;
+  }
+}
+
+@keyframes padding {
+  from {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  to {
+    width: 10rem;
+    height: 20rem;
+  }
+}
+
+// Code For Scrolling
+.section {
+  opacity: 0;
+}
+
+.scroll-reveal {
+  animation: fadeAndSlide 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeAndSlide {
+  from {
+    margin-top: 5rem;
+    opacity: 0;
+  }
+
+  to {
+    margin-top: 3rem;
+    opacity: 1;
+  }
+}
